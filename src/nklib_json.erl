@@ -51,10 +51,10 @@ encode(Term) ->
         end
     catch
         error:Error -> 
-            lager:debug("Error encoding JSON: ~p", [Error]),
+            logger:debug("Error encoding JSON: ~p", [Error]),
             error;
         throw:Error ->
-            lager:debug("Error encoding JSON: ~p", [Error]),
+            logger:debug("Error encoding JSON: ~p", [Error]),
             error
     end.
 
@@ -73,10 +73,10 @@ encode_pretty(Term) ->
         end
     catch
         error:Error -> 
-            lager:debug("Error encoding JSON: ~p", [Error]),
+            logger:debug("Error encoding JSON: ~p", [Error]),
             error;
         throw:Error ->
-            lager:debug("Error encoding JSON: ~p", [Error]),
+            logger:debug("Error encoding JSON: ~p", [Error]),
             error
     end.
 
@@ -95,10 +95,10 @@ decode(Term) ->
         end
     catch
         error:Error -> 
-            lager:debug("Error decoding JSON: ~p", [Error]),
+            logger:debug("Error decoding JSON: ~p", [Error]),
             error;
         throw:Error ->
-            lager:debug("Error decoding JSON: ~p", [Error]),
+            logger:debug("Error decoding JSON: ~p", [Error]),
             error
     end.
     
