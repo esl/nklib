@@ -9,8 +9,6 @@ NkLIB includes a serie of common utilities and services for NetComposer, but pro
 * [**nklib_headers**](src/nklib_headers.erl): General header (HTTP, SIP, etc.) manipulation functions.
 * [**nklib_json**](src/nklib_json.erl): JSON manipulation.
 * [**nklib_links**](src/nklib_links.erl): Generic process extended links.
-* [**nklib_log**](src/nklib_log.erl): Generic log processing.
-* [**nklib_log_gelf**](src/nklib_log_gelf.erl): GELF-compatible log and lager backend.
 * [**nklib_parse**](src/nklib_parse.erl) and [**nklib_unparse.erl**](src/nklib_unparse.erl): high perfomance parsers and unparsers for URIs, Schemes, Tokens, Integers and Dates.
 * [**nklib_proc**](src/nklib_proc.erl): Yet another ETS-based process registry. It allows a process to register any `term()` as a process identification, and store any metadata with it. When the process exists, these terms are deleted. 
 * [**nklib_reglist**](src/nklib_reglist.erl): Datatype and related functions useful for managing lists of processes registering for events.
