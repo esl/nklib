@@ -111,8 +111,8 @@ call(Dest, Msg, Timeout) ->
     try
         gen_server:call(Dest, Msg, Timeout)
     catch
-        Class:Error ->
-            {error, {Class, {Error, erlang:get_stacktrace()}}}
+        Class:Error:StackTrace ->
+            {error, {Class, {Error, StackTrace}}}
     end.
 
 
@@ -129,8 +129,8 @@ apply(Mod, Fun, Args) ->
                 erlang:apply(Mod, Fun, Args)
         end
     catch
-        Class:Error ->
-            {error, {Class, {Error, erlang:get_stacktrace()}}}
+        Class:Error:StackTrace ->
+            {error, {Class, {Error, StackTrace}}}
     end.
 
 
@@ -1007,7 +1007,7 @@ demonitor(_) ->
 msg(Msg, Vars) ->
     case catch list_to_binary(io_lib:format(Msg, Vars)) of
         {'EXIT', _} ->
-            lager:warning("MSG PARSE ERROR: ~p, ~p", [Msg, Vars]),
+            logger:warning("MSG PARSE ERROR: ~p, ~p", [Msg, Vars]),
             <<"Msg parser error">>;
         Result ->
             Result

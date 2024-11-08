@@ -59,7 +59,7 @@ getter(Fun, Value) ->
            erl_syntax:atom(Fun),
            [erl_syntax:clause([], none, [erl_syntax:abstract(Value)])])
     catch
-        error:Error -> lager:warning("Could not make getter for ~p", [Value]),
+        error:Error -> logger:warning("Could not make getter for ~p", [Value]),
         error(Error)
     end.
 
